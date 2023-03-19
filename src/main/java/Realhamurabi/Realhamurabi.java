@@ -6,6 +6,21 @@ import java.util.Scanner;
 public class Realhamurabi {         // must save in a file named Hammurabi.java
     Random rand = new Random();  // this is an instance variable
     Scanner scanner = new Scanner(System.in);
+    int people = 100;
+    int grain = 2800;
+    int acre = 1000;
+    int land = 19;
+    int populationDeath = 0;
+    int immigrants = 5;
+    int ratata = 200;
+    int year = 1;
+    int harvest = 2000;
+    int efficiency = 3;
+    boolean bought;
+    int fed;
+    int plagueLosses;
+    int starvationLosses;
+    int planted;
 
     public static void main(String[] args) { // required in every Java program
         new Realhamurabi().playGame();
@@ -34,19 +49,20 @@ public class Realhamurabi {         // must save in a file named Hammurabi.java
     void playGame() {
         // declare local variables here: grain, population, etc.
         // statements go after the declations
-        int people = 100;
-        int grain = 2800;
-        int acre = 1000;
-        int land = 19;
-        System.out.println("O great Hammurabi!\n"
-                +"You are in year 1 of your ten year rule.\n"
-                +"In the previous year 0 people starved to death.\n"
-        +"In the previous year 5 people entered the kingdom.\n"
-        +"The population is now 100.\n"+
-        "We harvested 3000 bushels at 3 bushels per acre.\n"
-                +"Rats destroyed 200 bushels, leaving 2800 bushels in storage.\n"
-                +"The city owns 1000 acres of land.\n"
-                +"Land is currently worth 19 bushels per acre.");
+
+        while(year < 10) {
+            System.out.println("O great Hammurabi!\n"
+                    + "You are in year" + year + "of your ten year rule.\n"
+                    + "In the previous year 0 people starved to death.\n"
+                    + "In the previous year 5 people entered the kingdom.\n"
+                    + "The population is now 100.\n" +
+                    "We harvested 3000 bushels at 3 bushels per acre.\n"
+                    + "Rats destroyed 200 bushels, leaving 2800 bushels in storage.\n"
+                    + "The city owns 1000 acres of land.\n"
+                    + "Land is currently worth 19 bushels per acre.");
+            askHowManyAcresToBuy(land, grain);
+            year++;
+        }
 
     }
     public int askHowManyAcresToBuy(int price, int bushels){
